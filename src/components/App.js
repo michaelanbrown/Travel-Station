@@ -5,6 +5,7 @@ import Header from "./Header"
 import TravelPast from "./TravelPast"
 import TravelFuture from "./TravelFuture"
 import Memories from "./Memories"
+import Featured from "./Featured"
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <Header />
         <Switch>
             <Route exact path="/">
+                <Featured />
+            </Route>
+            <Route exact path="/past">
                 <TravelPast />
             </Route>
             <Route exact path="/plans">
