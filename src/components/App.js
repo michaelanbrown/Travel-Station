@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Switch, Route } from "react-router-dom";
 import './App.css';
 import Header from "./Header"
@@ -8,6 +8,12 @@ import Memories from "./Memories"
 import Featured from "./Featured"
 
 function App() {
+    // const [travels, setTravels] = useState([])
+
+    // useEffect(() => {
+    //     fetch()
+    // })
+
   return (
     <div>
         <Header />

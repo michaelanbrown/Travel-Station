@@ -65,6 +65,12 @@
         "city": "Dead Cow - High Sierra Fly In",
         "state": "NV",
         "date": "October 2022"
+      },
+      {
+        "id": 10,
+        "city": "Truckee Tahoe",
+        "state": "CA",
+        "date": "January 2023"
       }
     ],
 
