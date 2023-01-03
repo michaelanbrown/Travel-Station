@@ -24,7 +24,7 @@ function App() {
                 <Featured travels={travels}/>
             </Route>
             <Route exact path="/past">
-                <TravelPast />
+                <TravelPast travels={travels} />
             </Route>
             <Route exact path="/plans">
                 <TravelFuture />
