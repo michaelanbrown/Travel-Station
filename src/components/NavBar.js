@@ -9,7 +9,7 @@ export default function NavBar ()  {
             <br></br>
             <NavLink exact to="/past" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Past Travels</NavLink>
             <br></br>
-            <NavLink excact to="/plans" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Future Travels</NavLink>
+            <NavLink exact to="/plans" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Future Travels</NavLink>
             <br></br>
             <NavLink exact to="/memories" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Memories</NavLink>
         </nav>
