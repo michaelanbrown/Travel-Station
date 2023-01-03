@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 
-function TravelCard({ travel }) {
+function TravelCard({ travel, travelClass }) {
     
     return (
-        <div className='TravelCard'>
+        <div className={travelClass}>
             <img  src={travel.photo} alt={travel.city} width="75%" height="75%"/>
             <p>{travel.city}<br></br>{travel.state}<br></br>{travel.date}</p>
             <br></br>

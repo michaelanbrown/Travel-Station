@@ -5,7 +5,7 @@ import TravelCard from './TravelCard';
 function TravelPast({ travels }) {
     const travelRender = travels.map (travel => {
         return (
-            <TravelCard travel={travel} key={travel.id}/>
+            <TravelCard travelClass="TravelPast" travel={travel} key={travel.id}/>
         )
     })
 
