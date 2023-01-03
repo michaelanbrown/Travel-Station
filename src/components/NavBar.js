@@ -1,13 +1,17 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import './App.css';
 
 export default function NavBar ()  {
     return (
-        <nav>
-            <NavLink exact to="/">Featured Travel</NavLink>
-            <NavLink exact to="/past">Past Travels</NavLink>
-            <NavLink excact to="/plans">Future Travels</NavLink>
-            <NavLink exact to="/memories">Memories</NavLink>
+        <nav className="NavBar">
+            <NavLink exact to="/" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Featured Travels</NavLink>
+            <br></br>
+            <NavLink exact to="/past" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Past Travels</NavLink>
+            <br></br>
+            <NavLink excact to="/plans" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Future Travels</NavLink>
+            <br></br>
+            <NavLink exact to="/memories" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Memories</NavLink>
         </nav>
     )
 }

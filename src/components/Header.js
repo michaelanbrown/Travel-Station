@@ -1,11 +1,11 @@
 import React from "react";
 import NavBar from "./NavBar";
+import './App.css';
 
 function Header() {
 
   return (
-    <>
-    <div>
+    <div className="Header">
       <header>
         <h1>
         ✈️ Come travel with us! 🌍
@@ -13,12 +13,10 @@ function Header() {
         </h1>
           <p><em>Remember all of the wonderful times you've experienced with Travel Station!</em></p>
         <div>
-            <br></br>
             <NavBar />
         </div>  
       </header>
     </div>
-    </>
   );
 }
 

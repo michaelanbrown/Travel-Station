@@ -8,18 +8,20 @@ import Memories from "./Memories"
 import Featured from "./Featured"
 
 function App() {
-    // const [travels, setTravels] = useState([])
+    const [travels, setTravels] = useState([])
 
-    // useEffect(() => {
-    //     fetch()
-    // })
+    useEffect(() => {
+        fetch("http://localhost:3000/travels")
+        .then(r => r.json())
+        .then(data => setTravels(data))
+    },[])
 
   return (
     <div>
         <Header />
         <Switch>
             <Route exact path="/">
-                <Featured />
+                <Featured travels={travels}/>
             </Route>
             <Route exact path="/past">
                 <TravelPast />
