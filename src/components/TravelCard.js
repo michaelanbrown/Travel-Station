@@ -4,8 +4,11 @@ import './App.css';
 function TravelCard({ travel }) {
     
     return (
-        <div>
-            <img src={travel.photo} alt={travel.city} />
+        <div className='TravelCard'>
+            <img  src={travel.photo} alt={travel.city} width="18%" height="18%"/>
+            <p>{travel.city}<br></br>{travel.state}<br></br>{travel.date}</p>
+            <br></br>
+            <br></br>
         </div>
     )
 }

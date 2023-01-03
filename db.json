@@ -5,28 +5,28 @@
         "city": "Big Sur",
         "state": "CA",
         "date": "January 2021",
-        "photo": "./src/photos/1.jpg"
+        "photo": "https://i.imgur.com/D752YtA.jpeg"
       },
       {
         "id": 2,
         "city": "San Francisco",
         "state": "CA",
         "date": "January 2021",
-        "photo": "./src/photos/2.jpg"
+        "photo": "https://imgur.com/U2lrgvE.jpeg"
       },
       {
         "id": 3,
         "city": "June Lake",
         "state": "CA",
         "date": "February 2021",
-        "photo": "./src/photos/3.jpg"
+        "photo": "https://imgur.com/UWb7M5M.jpeg"
       },
       {
         "id": 4,
         "city": "Miami",
         "state": "FL",
         "date": "March 2021",
-        "photo": "./src/photos/4.jpg"
+        "photo": "https://imgur.com/Ezf2Lkd.jpeg"
       },
       {
         "id": 5,
@@ -40,49 +40,49 @@
         "city": "Hat Creek - Burney Falls",
         "state": "CA",
         "date": "May 2021",
-        "photo": "./src/photos/6.jpg"
+        "photo": "https://imgur.com/k3WVxTk.jpeg"
       },
       {
         "id": 7,
         "city": "Yosemite",
         "state": "CA",
         "date": "July 2021",
-        "photo": "./src/photos/7.jpg"
+        "photo": "https://imgur.com/OekCLuA.jpeg"
       },
       {
         "id": 8,
         "city": "Dead Cow - High Sierra Fly In",
         "state": "NV",
         "date": "October 2021",
-        "photo": "./src/photos/8.jpg"
+        "photo": "https://imgur.com/YZV0CNI.jpeg"
       },
       {
         "id": 9,
         "city": "Lovelock",
         "state": "NV",
         "date": "February 2022",
-        "photo": "./src/photos/9.jpg"
+        "photo": "https://imgur.com/sLFQc3e.jpeg"
       },
       {
         "id": 10,
         "city": "Reno - Reno Air Races",
         "state": "NV",
         "date": "September 2022",
-        "photo": "./src/photos/10.jpg"
+        "photo": "https://imgur.com/zukz1ua.jpeg"
       },
       {
         "id": 11,
         "city": "Dead Cow - High Sierra Fly In",
         "state": "NV",
         "date": "October 2022",
-        "photo": "./src/photos/11.jpg"
+        "photo": "https://imgur.com/3O9VSJK.jpeg"
       },
       {
         "id": 12,
         "city": "Truckee Tahoe",
         "state": "CA",
         "date": "January 2023",
-        "photo": "./src/photos/12.jpg"
+        "photo": "https://imgur.com/flSxfuK.jpeg"
       }
     ],
 

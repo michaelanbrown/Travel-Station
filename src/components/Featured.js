@@ -9,7 +9,7 @@ function Featured({ travels }) {
         <div className="Featured">
           <h1>Curious about my most recent trip?</h1>
           <p>Please see below!</p>
-          <TravelCard travels={lastTravel} />
+          {/* <TravelCard travels={lastTravel} /> */}
         </div>
   );
 }
