@@ -61,3 +61,9 @@ body {
   max-width: fit-content;
   max-height: fit-content;
 }
+
+.Lis {
+  border-radius: 5px;
+  border-style: outset;
+  border-color: black;
+}

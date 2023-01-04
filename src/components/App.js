@@ -11,6 +11,7 @@ function App() {
     const [travels, setTravels] = useState([])
     const [lastTravel, setLastTravel] = useState([])
     const [future, setFuture] = useState([])
+    const [memories, setMemories] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:3000/travels")
@@ -29,6 +30,14 @@ function App() {
         })
     },[])
 
+    useEffect(() => {
+        fetch("http://localhost:3000/memories")
+        .then(r => r.json())
+        .then(data => {
+            setMemories(data);
+        })
+    },[])
+
   return (
     <div>
         <Header />
@@ -43,7 +52,7 @@ function App() {
                 <TravelFuture future={future}/>
             </Route>
             <Route exact path="/memories">
-                <Memories />
+                <Memories memories={memories}/>
             </Route>
         </Switch>
     </div>
