@@ -10,6 +10,7 @@ import Featured from "./Featured"
 function App() {
     const [travels, setTravels] = useState([])
     const [lastTravel, setLastTravel] = useState([])
+    const [future, setFuture] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:3000/travels")
@@ -17,6 +18,14 @@ function App() {
         .then(data => {
             setTravels(data);
             setLastTravel([data[data.length-1]])
+        })
+    },[])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/future")
+        .then(r => r.json())
+        .then(data => {
+            setFuture(data);
         })
     },[])
 
@@ -31,7 +40,7 @@ function App() {
                 <TravelPast travels={travels} />
             </Route>
             <Route exact path="/plans">
-                <TravelFuture />
+                <TravelFuture future={future}/>
             </Route>
             <Route exact path="/memories">
                 <Memories />

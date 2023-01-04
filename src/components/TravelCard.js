@@ -5,7 +5,7 @@ function TravelCard({ travel, travelClass }) {
     
     return (
         <div className={travelClass}>
-            <img  src={travel.photo} alt={travel.city} width="75%" height="75%"/>
+            <img className="TravelCardImg" src={travel.photo} alt={travel.city} width="75%" height="75%"/>
             <p>{travel.city}<br></br>{travel.state}<br></br>{travel.date}</p>
             <br></br>
             <br></br>
