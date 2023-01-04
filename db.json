@@ -172,14 +172,16 @@
           "city": "Reno - Reno Air Races",
           "state": "NV",
           "date": "September 2023",
-          "reason": "To see airplanes race and look at all of the historic planes on display."
+          "reason": "To see airplanes race and look at all of the historic planes on display.",
+          "photo": "https://airrace.org/wp-content/uploads/2022/10/RARA-572-Slider-1600x500-SaveDate.jpg"
         },
         {
           "id": 2,
             "city": "Dead Cow - High Sierra Fly In",
             "state": "NV",
             "date": "October 2023",
-            "reason": "HSFI is my favorite event of the year and it is SO MUCH FUN!"
+            "reason": "HSFI is my favorite event of the year and it is SO MUCH FUN!",
+            "photo": "https://images.squarespace-cdn.com/content/v1/5d28918aac84400001df0f2c/7671661a-794c-4c8f-b547-644844ab8869/Screen+Shot+2022-09-30+at+11.12.24+AM.png?format=1500w"
         }
     ]
   }

@@ -11,6 +11,7 @@ function TravelFuture({ future }) {
 
     return (
         <div>
+            <br></br>
             {futureRender}
         </div>
     )
