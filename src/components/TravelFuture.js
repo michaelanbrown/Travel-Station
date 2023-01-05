@@ -3,7 +3,7 @@ import './App.css';
 import FutureCard from "./FutureCard";
 import TravelPlanForm from "./TravelPlanForm";
 
-function TravelFuture({ future, formData, setFormData }) {
+function TravelFuture({ future, setFuture, formData, setFormData }) {
     const [want, setWant] = useState(false)
     const [wantValue, setWantValue] = useState("Want to submit a new travel plan?")
 
@@ -25,7 +25,7 @@ function TravelFuture({ future, formData, setFormData }) {
     return (
         <div className="Want">
             <button onClick={handleWantClick}>{wantValue}</button>
-            <TravelPlanForm formData={formData} setFormData={setFormData} want={want}/>
+            <TravelPlanForm future={future} setFuture={setFuture} formData={formData} setFormData={setFormData} want={want}/>
             {futureRender}
         </div>
     )

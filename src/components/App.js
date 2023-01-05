@@ -56,7 +56,7 @@ function App() {
                 <TravelPast travels={travels} />
             </Route>
             <Route exact path="/plans">
-                <TravelFuture future={future} formData={formData} setFormData={setFormData}/>
+                <TravelFuture future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
                 <Memories memories={memories}/>
