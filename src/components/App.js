@@ -12,6 +12,13 @@ function App() {
     const [lastTravel, setLastTravel] = useState([])
     const [future, setFuture] = useState([])
     const [memories, setMemories] = useState([])
+    const [formData, setFormData] = useState({
+        city: "",
+        state: "",
+        date: "",
+        reason: "",
+        photo: ""
+    });
 
     useEffect(() => {
         fetch("http://localhost:3000/travels")
