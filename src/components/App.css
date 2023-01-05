@@ -74,6 +74,10 @@ body {
   border-radius: 5px;
   border-style: outset;
   border-color: black;
-  width: 25%;
-  height: 25%;
+  margin-left: 42%;
+  margin-right: 42%;
+}
+
+.WantButton {
+  text-align: center;
 }

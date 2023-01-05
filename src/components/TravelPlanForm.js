@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 
-function TravelPlanForm({ formData, setFormData }) {
+function TravelPlanForm({ formData, setFormData, want }) {
 
     function handleFutureChange(e) {
         setFormData({
@@ -21,7 +21,7 @@ function TravelPlanForm({ formData, setFormData }) {
         });
     }
 
-    return (
+    return (want ? (
         <div className="FutureForm">
             <form onSubmit={handleFutureSubmit}>
                 Enter New Travel Plans Here:
@@ -35,8 +35,10 @@ function TravelPlanForm({ formData, setFormData }) {
                 <input type="text" id="reason" value={formData.reason} onChange={handleFutureChange} />
                 <br></br>
                 <input type="text" id="photo" value={formData.photo} onChange={handleFutureChange} />
+                <br></br>
+                <button>Submit</button>
             </form>
-        </div>
+        </div>) : null
     )
 }
 
