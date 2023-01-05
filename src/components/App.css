@@ -76,8 +76,9 @@ body {
   border-color: black;
   margin-left: 42%;
   margin-right: 42%;
+  margin-top: 1%;
 }
 
-.WantButton {
+.Want {
   text-align: center;
 }

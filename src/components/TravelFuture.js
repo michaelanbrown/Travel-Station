@@ -23,8 +23,8 @@ function TravelFuture({ future, formData, setFormData }) {
     })
 
     return (
-        <div>
-            <button onClick={handleWantClick} className="WantButton">{wantValue}</button>
+        <div className="Want">
+            <button onClick={handleWantClick}>{wantValue}</button>
             <TravelPlanForm formData={formData} setFormData={setFormData} want={want}/>
             {futureRender}
         </div>
