@@ -22,13 +22,19 @@ function TravelPlanForm({ formData, setFormData }) {
     }
 
     return (
-        <div>
+        <div className="FutureForm">
             <form onSubmit={handleFutureSubmit}>
-                <input type="text" id="city" value={formData.city} onChange={handleFutureChange} />
-                <input type="text" id="state" value={formData.city} onChange={handleFutureChange} />
-                <input type="text" id="date" value={formData.city} onChange={handleFutureChange} />
-                <input type="text" id="reason" value={formData.city} onChange={handleFutureChange} />
-                <input type="text" id="photo" value={formData.city} onChange={handleFutureChange} />
+                Enter New Travel Plans Here:
+                <br></br>
+                <input type="text" id="city" value={formData.city} onChange={handleFutureChange} placeholder="City/Activity"/>
+                <br></br>
+                <input type="text" id="state" value={formData.state} onChange={handleFutureChange} />
+                <br></br>
+                <input type="text" id="date" value={formData.date} onChange={handleFutureChange} />
+                <br></br>
+                <input type="text" id="reason" value={formData.reason} onChange={handleFutureChange} />
+                <br></br>
+                <input type="text" id="photo" value={formData.photo} onChange={handleFutureChange} />
             </form>
         </div>
     )

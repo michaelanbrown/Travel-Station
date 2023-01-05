@@ -18,10 +18,10 @@ body {
 }
 
 .NavBar {
-  display: "inline-block";
-  text-align: "center";
-  border-radius: "30px";
-  margin-bottom: "10px";
+  display: inline-block;
+  text-align: center;
+  border-radius: 30px;
+  margin-bottom: 10px;
   font-size: 18px;
 }
 
@@ -66,4 +66,14 @@ body {
   border-radius: 5px;
   border-style: outset;
   border-color: black;
+}
+
+.FutureForm {
+  font-size: 15px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: outset;
+  border-color: black;
+  width: 25%;
+  height: 25%;
 }

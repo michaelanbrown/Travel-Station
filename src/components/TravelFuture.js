@@ -12,7 +12,7 @@ function TravelFuture({ future, formData, setFormData }) {
 
     return (
         <div>
-            <TravelPlanForm formData={formData} setFormData={setFormData}/>
+            <TravelPlanForm formData={formData} setFormData={setFormData} />
             <br></br>
             {futureRender}
         </div>
