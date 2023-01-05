@@ -21,6 +21,13 @@ function TravelPlanForm({ future, setFuture, formData, setFormData, want }) {
         })
         .then(r => r.json())
         .then(data => setFuture([...future, data]))
+        .then(setFormData({
+            city: "",
+            state: "",
+            date: "",
+            reason: "",
+            photo: ""
+        }))
     }
 
     return (want ? (
