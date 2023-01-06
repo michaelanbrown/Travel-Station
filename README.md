@@ -34,6 +34,11 @@ Form to submit new data about:
 <form onSubmit={handleFutureSubmit}>
 ```
 
+Delete button:
+```bash
+<button onClick={handleFutureDelete} className="delete">🗑️</button>
+```
+
 
 ## Form Example
 
