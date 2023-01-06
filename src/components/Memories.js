@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import './App.css';
 import MemoryList from "./MemoryList";
 import MemoryForm from "./MemoryForm";
+import FilterState from "./FilterState";
 
-function Memories({ memories, setMemories, formDataMemory, setFormDataMemory }) {
+function Memories({ memories, setMemories, formDataMemory, setFormDataMemory, handleStateFilter }) {
     const [wantMemory, setWantMemory] = useState(false)
     const [wantMemoryValue, setWantMemoryValue] = useState("Want to submit a new memory?")
     const memoryListRender = memories.map (memory => {
@@ -15,9 +16,9 @@ function Memories({ memories, setMemories, formDataMemory, setFormDataMemory }) 
     function handleWantMemoryClick() {
         setWantMemory(wantMemory => !wantMemory)
         if (wantMemory === true) {
-            setWantMemory("Want to submit a new memory?")
+            setWantMemoryValue("Want to submit a new memory?")
         } else if (wantMemory === false) {
-            setWantMemory("Done submitting memories?")
+            setWantMemoryValue("Done submitting memories?")
         }
     }
 
@@ -25,6 +26,7 @@ function Memories({ memories, setMemories, formDataMemory, setFormDataMemory }) 
         <div className="Want">
             <button onClick={handleWantMemoryClick}>{wantMemoryValue}</button>
             <MemoryForm memories={memories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory} wantMemory={wantMemory}/>
+            <FilterState handleStateFilter={handleStateFilter}/>
             {memoryListRender}
         </div>
     )

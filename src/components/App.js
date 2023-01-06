@@ -29,7 +29,7 @@ function App() {
         city: "",
         state: "",
         date: "",
-        memory: ""
+        memories: ""
     });
     const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -40,6 +40,11 @@ function App() {
     const visibleTravels = travels.filter((travel) => {
         if (selectedCategory === "") return true;
         return travel.state === selectedCategory
+    })
+
+    const visibleMemories = memories.filter((memory) => {
+        if (selectedCategory === "") return true;
+        return memory.state === selectedCategory
     })
 
 
@@ -82,7 +87,7 @@ function App() {
                 <TravelFuture completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
-                <Memories memories={memories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
+                <Memories handleStateFilter={handleStateFilter} memories={visibleMemories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
             </Route>
         </Switch>
     </div>

@@ -25,7 +25,7 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
             city: "",
             state: "",
             date: "",
-            memory: ""
+            memories: ""
         }))
     }
 
@@ -40,7 +40,7 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
                 <br></br>
                 <input type="text" id="date" value={formDataMemory.date} onChange={handleMemoryChange} placeholder="Date"/>
                 <br></br>
-                <input type="text" id="memory" value={formDataMemory.memory} onChange={handleMemoryChange} placeholder="Memories"/>
+                <input type="text" id="memories" value={formDataMemory.memories} onChange={handleMemoryChange} placeholder="Memories"/>
                 <br></br>
                 <button>Submit</button>
             </form>
