@@ -91,20 +91,14 @@
       "city": "Big Sur",
       "state": "CA",
       "date": "January 2021",
-      "memories": [
-        "First road trip",
-        "First feeling of butterflies"
-      ]
+      "memories": "First roadtrip together where we took photos and laughed a ton"
     },
     {
       "id": 2,
       "city": "San Francisco",
       "state": "CA",
       "date": "January 2021",
-      "memories": [
-        "First overnight trip",
-        "First kiss"
-      ]
+      "memories": "First kiss"
     },
     {
       "id": 3,
@@ -120,78 +114,57 @@
       "city": "Miami",
       "state": "FL",
       "date": "March 2021",
-      "memories": [
-        "First flying trip",
-        "Beach days"
-      ]
+      "memories": "First flying trip together"
     },
     {
       "id": 5,
       "city": "Twentynine Palms - Joshua Tree",
       "state": "CA",
       "date": "April 2021",
-      "memories": [
-        "Trying to get hit by a jumping catcus"
-      ]
+      "memories": "Trying to get hit by a jumping catcus"
+
     },
     {
       "id": 6,
       "city": "Hat Creek - Burney Falls",
       "state": "CA",
       "date": "May 2021",
-      "memories": [
-        "Birthday trip",
-        "Driving into the woods to eat McDonalds in peace"
-      ]
+      "memories": "Driving into the woods to eat McDonalds in peace"
     },
     {
       "id": 7,
       "city": "Yosemite",
       "state": "CA",
       "date": "July 2021",
-      "memories": [
-        "Hiking in converse",
-        "Staying in a yurt"
-      ]
+      "memories": "Hiking in convrse and staying in a yurt."
     },
     {
       "id": 8,
       "city": "Dead Cow - High Sierra Fly In",
       "state": "NV",
       "date": "October 2021",
-      "memories": [
-        "First aviation event!",
-        "Ice cream",
-        "Airplane drag races"
-      ]
+      "memories": "First aviation event with ice cream and airplane drag racing!"
     },
     {
       "id": 9,
       "city": "Lovelock",
       "state": "NV",
       "date": "February 2022",
-      "memories": [
-        "Discovering howbeautiful hot air balloons are"
-      ]
+      "memory": "Discovering howbeautiful hot air balloons are"
     },
     {
       "id": 10,
       "city": "Reno - Reno Air Races",
       "state": "NV",
       "date": "September 2022",
-      "memories": [
-        "Fighter jets!"
-      ]
+      "memory": "Fighter jets!"
     },
     {
       "id": 11,
       "city": "Dead Cow - High Sierra Fly In",
       "state": "NV",
       "date": "October 2022",
-      "memories": [
-        "Bonfires",
-        "Remembering that we need to get electric scooters for next year"
-      ]
+      "memory": "Bonfires and remembering that we need scooters for next year"
     }
   ],
   "future": [

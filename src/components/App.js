@@ -29,7 +29,9 @@ function App() {
         city: "",
         state: "",
         date: "",
-        memories: []
+        memories1: "",
+        memories2: "",
+        memories3: ""
     });
     const [selectedCategory, setSelectedCategory] = useState("");
 
