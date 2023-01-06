@@ -6,8 +6,16 @@ function FutureCard({ futureEvent }) {
     return (
             <div className="Future">
                 <br></br>
+                <button className="delete">🗑️</button>
                 <img className="FuturePhoto" src={futureEvent.photo} alt={futureEvent.city} width="75%" height="75%" />
-                <p>{futureEvent.city}<br></br>{futureEvent.state}<br></br>{futureEvent.date}<br></br>{futureEvent.reason}</p>
+                <p>{futureEvent.city}
+                <br></br>
+                {futureEvent.state}
+                <br></br>
+                {futureEvent.date}
+                <br></br>
+                {futureEvent.reason}
+                </p>
                 <br></br>
                 <br></br>
                 <br></br>

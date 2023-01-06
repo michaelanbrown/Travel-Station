@@ -82,3 +82,9 @@ body {
 .Want {
   text-align: center;
 }
+
+.delete {
+  cursor: pointer;
+  background-color: rgba(16, 170, 170, 0.271);
+  float: right
+}
