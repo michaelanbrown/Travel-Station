@@ -79,6 +79,17 @@ body {
   margin-top: 1%;
 }
 
+.MemoryForm {
+  font-size: 15px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: outset;
+  border-color: black;
+  margin-left: 38%;
+  margin-right: 38%;
+  margin-top: 1%;
+}
+
 .Want {
   text-align: center;
 }

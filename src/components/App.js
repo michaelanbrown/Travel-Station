@@ -25,6 +25,12 @@ function App() {
         date: "",
         photo: ""
     })
+    const [formDataMemory, setFormDataMemory] = useState({
+        city: "",
+        state: "",
+        date: "",
+        memories: []
+    });
     const [selectedCategory, setSelectedCategory] = useState("");
 
     function handleStateFilter(event) {
@@ -76,7 +82,7 @@ function App() {
                 <TravelFuture completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
-                <Memories memories={memories}/>
+                <Memories memories={memories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
             </Route>
         </Switch>
     </div>
