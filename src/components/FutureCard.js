@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function FutureCard({ futureEvent, future, setFuture }) {
+function FutureCard({ travels, setTravels, futureEvent, future, setFuture,  completeData, setCompleteData }) {
 
     function deletePlan(deletedPlan) {
         const updatedPlans = future.filter((plan) => plan.id !== deletedPlan.id);
@@ -14,6 +14,38 @@ function FutureCard({ futureEvent, future, setFuture }) {
         })
         .then(r => r.json())
         .then(() => deletePlan(futureEvent))
+    }
+
+    function handleCompleteDelete() {
+        fetch(`https://travel-station-data.onrender.com/future/${futureEvent.id}`, {
+        method: "DELETE",
+        })
+        .then(r => r.json())
+        .then(() => deletePlan(futureEvent))
+        .then(setCompleteData({
+            city:futureEvent.city,
+            state:futureEvent.state,
+            date:futureEvent.date,
+            photo:futureEvent.photo
+        }))
+        .then(handleCompleteAdd(futureEvent))
+    }
+
+    function handleCompleteAdd(futureEvent) {
+        fetch("https://travel-station-data.onrender.com/travels", {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            city: futureEvent.city,
+            state: futureEvent.state,
+            date: futureEvent.date,
+            photo: futureEvent.photo
+        }),
+        })
+        .then(r => r.json())
+        .then(data => setTravels([...travels, data]))
     }
     
     return (
@@ -29,7 +61,7 @@ function FutureCard({ futureEvent, future, setFuture }) {
                 <br></br>
                 {futureEvent.reason}
                 </p>
-                <button className="complete">Complete 🗸</button>
+                <button onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
                 <br></br>
                 <br></br>
                 <br></br>

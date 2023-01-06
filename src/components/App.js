@@ -19,6 +19,12 @@ function App() {
         reason: "",
         photo: ""
     });
+    const [completeData, setCompleteData] = useState({
+        city: "",
+        state: "",
+        date: "",
+        photo: ""
+    })
 
     useEffect(() => {
         fetch("https://travel-station-data.onrender.com/travels")
@@ -56,7 +62,7 @@ function App() {
                 <TravelPast travels={travels} />
             </Route>
             <Route exact path="/plans">
-                <TravelFuture future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
+                <TravelFuture completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
                 <Memories memories={memories}/>

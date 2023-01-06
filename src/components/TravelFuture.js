@@ -3,7 +3,7 @@ import './App.css';
 import FutureCard from "./FutureCard";
 import TravelPlanForm from "./TravelPlanForm";
 
-function TravelFuture({ future, setFuture, formData, setFormData }) {
+function TravelFuture({ future, setFuture, formData, setFormData, travels, setTravels, completeData, setCompleteData}) {
     const [want, setWant] = useState(false)
     const [wantValue, setWantValue] = useState("Want to submit a new travel plan?")
 
@@ -18,7 +18,7 @@ function TravelFuture({ future, setFuture, formData, setFormData }) {
 
     const futureRender = future.map(futureEvent => {
         return (
-            <FutureCard futureEvent={futureEvent} future={future} setFuture={setFuture} key={futureEvent.id} />
+            <FutureCard completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} futureEvent={futureEvent} future={future} setFuture={setFuture} key={futureEvent.id} />
         )
     })
 
