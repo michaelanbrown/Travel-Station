@@ -44,6 +44,16 @@ Complete button:
 <button onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
 ```
 
+State filter:
+```bash
+<div id="filterstate">Filter by State:{' '}
+    <select name="type" onChange={handleStateFilter}>
+            <option value="" defaultValue={''}></option>
+            {optionList}
+    </select>
+</div>
+```
+
 ## Form Example
 
 ```python

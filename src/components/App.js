@@ -25,6 +25,17 @@ function App() {
         date: "",
         photo: ""
     })
+    const [selectedCategory, setSelectedCategory] = useState("");
+
+    function handleStateFilter(event) {
+        setSelectedCategory(event.target.value);
+    }
+
+    const visibleTravels = travels.filter((travel) => {
+        if (selectedCategory === "") return true;
+        return travel.state === selectedCategory
+    })
+
 
     useEffect(() => {
         fetch("https://travel-station-data.onrender.com/travels")
@@ -59,7 +70,7 @@ function App() {
                 <Featured travels={lastTravel}/>
             </Route>
             <Route exact path="/past">
-                <TravelPast travels={travels} />
+                <TravelPast travels={visibleTravels} handleStateFilter={handleStateFilter}/>
             </Route>
             <Route exact path="/plans">
                 <TravelFuture completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
