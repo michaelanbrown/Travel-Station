@@ -93,3 +93,7 @@ body {
   cursor: pointer;
   background-color: rgba(118, 154, 154, 0.271);
 }
+
+#filterstate {
+  text-align: center;
+}

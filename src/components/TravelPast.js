@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import TravelCard from './TravelCard';
+import FilterState from "./FilterState";
 
 function TravelPast({ travels }) {
     const travelRender = travels.map (travel => {
@@ -11,6 +12,8 @@ function TravelPast({ travels }) {
 
     return (
         <div>
+            <FilterState />
+            <br></br>
             {travelRender}
         </div>
     )
