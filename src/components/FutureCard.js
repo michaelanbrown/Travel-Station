@@ -29,6 +29,7 @@ function FutureCard({ futureEvent, future, setFuture }) {
                 <br></br>
                 {futureEvent.reason}
                 </p>
+                <button className="complete">Complete 🗸</button>
                 <br></br>
                 <br></br>
                 <br></br>

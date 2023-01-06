@@ -85,6 +85,11 @@ body {
 
 .delete {
   cursor: pointer;
-  background-color: rgba(16, 170, 170, 0.271);
+  background-color: rgba(118, 154, 154, 0.271);
   float: right
+}
+
+.complete {
+  cursor: pointer;
+  background-color: rgba(118, 154, 154, 0.271);
 }
