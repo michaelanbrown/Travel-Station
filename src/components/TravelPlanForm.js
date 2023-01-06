@@ -12,7 +12,7 @@ function TravelPlanForm({ future, setFuture, formData, setFormData, want }) {
 
     function handleFutureSubmit(e) {
         e.preventDefault();
-        fetch("http://localhost:3000/future", {
+        fetch("https://travel-station-data.onrender.com/future", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"

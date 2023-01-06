@@ -1,12 +1,25 @@
 import React from 'react';
 import './App.css';
 
-function FutureCard({ futureEvent }) {
+function FutureCard({ futureEvent, future, setFuture }) {
+
+    function deletePlan(deletedPlan) {
+        const updatedPlans = future.filter((plan) => plan.id !== deletedPlan.id);
+        setFuture(updatedPlans)
+    }
+
+    function handleFutureDelete() {
+        fetch(`https://travel-station-data.onrender.com/future/${futureEvent.id}`, {
+        method: "DELETE",
+        })
+        .then(r => r.json())
+        .then(() => deletePlan(futureEvent))
+    }
     
     return (
             <div className="Future">
                 <br></br>
-                <button className="delete">🗑️</button>
+                <button onClick={handleFutureDelete} className="delete">🗑️</button>
                 <img className="FuturePhoto" src={futureEvent.photo} alt={futureEvent.city} width="75%" height="75%" />
                 <p>{futureEvent.city}
                 <br></br>

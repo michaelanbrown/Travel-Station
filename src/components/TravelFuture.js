@@ -18,7 +18,7 @@ function TravelFuture({ future, setFuture, formData, setFormData }) {
 
     const futureRender = future.map(futureEvent => {
         return (
-            <FutureCard futureEvent={futureEvent} key={futureEvent.id} />
+            <FutureCard futureEvent={futureEvent} future={future} setFuture={setFuture} key={futureEvent.id} />
         )
     })
 
