@@ -21,7 +21,7 @@ function App() {
     });
 
     useEffect(() => {
-        fetch("http://localhost:3000/travels")
+        fetch("https://travel-station-data.onrender.com/travels")
         .then(r => r.json())
         .then(data => {
             setTravels(data);
@@ -30,7 +30,7 @@ function App() {
     },[])
 
     useEffect(() => {
-        fetch("http://localhost:3000/future")
+        fetch("https://travel-station-data.onrender.com/future")
         .then(r => r.json())
         .then(data => {
             setFuture(data);
@@ -38,7 +38,7 @@ function App() {
     },[])
 
     useEffect(() => {
-        fetch("http://localhost:3000/memories")
+        fetch("https://travel-station-data.onrender.com/memories")
         .then(r => r.json())
         .then(data => {
             setMemories(data);
