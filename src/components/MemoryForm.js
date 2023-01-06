@@ -20,13 +20,13 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
             body: JSON.stringify(formDataMemory),
         })
         .then(r => r.json())
-        .then(data => setFormDataMemory({
-            city: data.city,
-            state: data.state,
-            date: data.date,
-            memories: [data.memories1, data.memories2, data.memories3]
+        .then(data => setMemories([...memories, data]))
+        .then(setFormDataMemory({
+            city: "",
+            state: "",
+            date: "",
+            memory: ""
         }))
-        .then(console.log(formDataMemory))
     }
 
     return (wantMemory ? (
@@ -40,11 +40,7 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
                 <br></br>
                 <input type="text" id="date" value={formDataMemory.date} onChange={handleMemoryChange} placeholder="Date"/>
                 <br></br>
-                <input type="text" id="memories1" value={formDataMemory.memories1} onChange={handleMemoryChange} placeholder="Memory 1"/>
-                <br></br>
-                <input type="text" id="memories2" value={formDataMemory.memories2} onChange={handleMemoryChange} placeholder="Memory 2"/>
-                <br></br>
-                <input type="text" id="memories3" value={formDataMemory.memories3} onChange={handleMemoryChange} placeholder="Memory 3"/>
+                <input type="text" id="memory" value={formDataMemory.memory} onChange={handleMemoryChange} placeholder="Memories"/>
                 <br></br>
                 <button>Submit</button>
             </form>
