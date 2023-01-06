@@ -39,6 +39,10 @@ Delete button:
 <button onClick={handleFutureDelete} className="delete">🗑️</button>
 ```
 
+Complete button:
+```bash
+<button onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
+```
 
 ## Form Example
 
