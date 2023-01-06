@@ -9,7 +9,7 @@ function Memories({ memories, setMemories, formDataMemory, setFormDataMemory, ha
     const [wantMemoryValue, setWantMemoryValue] = useState("Want to submit a new memory?")
     const memoryListRender = memories.map (memory => {
         return (
-           <MemoryList memory={memory} key={memory.id} />
+           <MemoryList setMemories={setMemories} memories={memories} memory={memory} key={memory.id} />
         )
     })
 

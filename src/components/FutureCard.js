@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function FutureCard({ travels, setTravels, futureEvent, future, setFuture,  completeData, setCompleteData }) {
+function FutureCard({ travels, setTravels, futureEvent, future, setFuture, setCompleteData }) {
 
     function deletePlan(deletedPlan) {
         const updatedPlans = future.filter((plan) => plan.id !== deletedPlan.id);
