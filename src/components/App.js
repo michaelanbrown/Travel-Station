@@ -8,10 +8,15 @@ import Memories from "./Memories"
 import Featured from "./Featured"
 
 function App() {
+    const password = "Phase2ProjectMichaelaTravels"
     const [travels, setTravels] = useState([])
     const [lastTravel, setLastTravel] = useState([])
     const [future, setFuture] = useState([])
     const [memories, setMemories] = useState([])
+    const [memoryPassActive, setMemoryPassActive] = useState(false)
+    const [futurePassActive, setFuturePassActive] = useState(false)
+    const [passwordData, setPasswordData] = useState("")
+    const [passActive, setPassActive] = useState(false)
     const [formData, setFormData] = useState({
         city: "",
         state: "",
@@ -73,6 +78,15 @@ function App() {
         })
     },[])
 
+    function handlePasswordChange(e) {
+        setPasswordData(e.target.value);
+        if(e.target.value !== password) {
+            setPassActive(false)
+        } else {
+            setPassActive(true)
+        }
+    }
+
   return (
     <div>
         <Header />
@@ -84,10 +98,10 @@ function App() {
                 <TravelPast travels={visibleTravels} handleStateFilter={handleStateFilter}/>
             </Route>
             <Route exact path="/plans">
-                <TravelFuture completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
+                <TravelFuture passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} futurePassActive={futurePassActive} setFuturePassActive={setFuturePassActive} password={password} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
-                <Memories handleStateFilter={handleStateFilter} memories={visibleMemories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
+                <Memories passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} memoryPassActive={memoryPassActive} setMemoryPassActive={setMemoryPassActive} password={password} handleStateFilter={handleStateFilter} memories={visibleMemories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
             </Route>
         </Switch>
     </div>

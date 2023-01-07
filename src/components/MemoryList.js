@@ -18,7 +18,7 @@ function MemoryList({ memories, memory, setMemories }) {
     
     return (
             <div>
-                <button onClick={handleMemoryDelete} className="delete">🗑️</button>
+                <button onClick={handleMemoryDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
                 <br></br>
                 <h1>{memory.city}</h1>
                 <h2>{memory.state}</h2>

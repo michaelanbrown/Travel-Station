@@ -51,7 +51,7 @@ function FutureCard({ travels, setTravels, futureEvent, future, setFuture, setCo
     return (
             <div className="Future">
                 <br></br>
-                <button onClick={handleFutureDelete} className="delete">🗑️</button>
+                <button onClick={handleFutureDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
                 <img className="FuturePhoto" src={futureEvent.photo} alt={futureEvent.city} width="75%" height="75%" />
                 <p>{futureEvent.city}
                 <br></br>

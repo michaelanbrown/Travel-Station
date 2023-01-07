@@ -8,7 +8,7 @@ function Header() {
     <div className="Header">
       <header>
         <h1>
-        ✈️ Come travel with us! 🌍
+        <span role="img" aria-label="plane">✈️</span> Come travel with us! <span role="img" aria-label="globe">🌍</span>
         <br/>
         </h1>
           <p><em>Remember all of the wonderful times you've experienced with Travel Station!</em></p>
