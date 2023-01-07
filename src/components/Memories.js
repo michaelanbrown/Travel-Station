@@ -5,7 +5,7 @@ import MemoryForm from "./MemoryForm";
 import FilterState from "./FilterState";
 import Password from "./Password";
 
-function Memories({ passActive, setPassActive, handlePasswordChange, memoryPassActive, setMemoryPassActive, setPasswordData, passwordData, password, memories, setMemories, formDataMemory, setFormDataMemory, handleStateFilter }) {
+function Memories({ passActive, setPassActive, handlePasswordChange, setPasswordData, passwordData, password, memories, setMemories, formDataMemory, setFormDataMemory, handleStateFilter }) {
     const [wantMemory, setWantMemory] = useState(false)
     const [wantMemoryValue, setWantMemoryValue] = useState("Want to submit a new memory?")
     const memoryListRender = memories.map (memory => {
@@ -23,14 +23,6 @@ function Memories({ passActive, setPassActive, handlePasswordChange, memoryPassA
         }
     }
 
-    // function handleMemoryPasswordChange(e) {
-    //     setPasswordData(e.target.value);
-    //     if(e.target.value !== password) {
-    //         setMemoryPassActive(false)
-    //     } else {
-    //         setMemoryPassActive(true)
-    //     }
-    // }
 
     return (
         <div className="Want">

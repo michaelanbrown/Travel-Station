@@ -4,7 +4,7 @@ import FutureCard from "./FutureCard";
 import TravelPlanForm from "./TravelPlanForm";
 import Password from "./Password";
 
-function TravelFuture({ passActive, setPassActive, handlePasswordChange, setPasswordData, passwordData, futurePassActive, setFuturePassActive, password, future, setFuture, formData, setFormData, travels, setTravels, completeData, setCompleteData}) {
+function TravelFuture({ passActive, setPassActive, handlePasswordChange, setPasswordData, passwordData, password, future, setFuture, formData, setFormData, travels, setTravels, completeData, setCompleteData}) {
     const [want, setWant] = useState(false)
     const [wantValue, setWantValue] = useState("Want to submit a new travel plan?")
 
@@ -22,15 +22,6 @@ function TravelFuture({ passActive, setPassActive, handlePasswordChange, setPass
             <FutureCard completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} futureEvent={futureEvent} future={future} setFuture={setFuture} key={futureEvent.id} />
         )
     })
-
-    // function handleFuturePasswordChange(e) {
-    //     setPasswordData(e.target.value);
-    //     if(e.target.value !== password) {
-    //         setFuturePassActive(false)
-    //     } else {
-    //         setFuturePassActive(true)
-    //     }
-    // }
 
     return (
         <div className="Want">
