@@ -76,6 +76,9 @@ State filter:
             </form>
 ```
 
+## Fork and Clone
+If you would like to clone this into your environment an dmake it your own, you may change the password in /src/components/App.js line 11.
+
 ## Contributing
 
 Suggestions are welcome.
