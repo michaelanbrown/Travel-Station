@@ -10,7 +10,7 @@ import Featured from "./Featured"
 function App() {
     const password = "Phase2ProjectMichaelaTravels"
     const [travels, setTravels] = useState([])
-    const [lastTravel, setLastTravel] = useState([])
+    const [lastTravel, setLastTravel] = useState({})
     const [future, setFuture] = useState([])
     const [memories, setMemories] = useState([])
     const [memoryPassActive, setMemoryPassActive] = useState(false)
@@ -58,7 +58,7 @@ function App() {
         .then(r => r.json())
         .then(data => {
             setTravels(data);
-            setLastTravel([data[data.length-1]])
+            setLastTravel(data[data.length-1])
         })
     },[])
 
@@ -87,6 +87,27 @@ function App() {
         }
     }
 
+    function handleCompleteAdd(futureEvent) {
+        fetch("https://travel-station-data.onrender.com/travels", {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            city: futureEvent.city,
+            state: futureEvent.state,
+            date: futureEvent.date,
+            photo: futureEvent.photo
+        }),
+        })
+        .then(r => r.json())
+        .then(data => {
+            setTravels([...travels, data]);
+            setLastTravel(data)
+        })
+    }
+
+
   return (
     <div>
         <Header />
@@ -98,7 +119,7 @@ function App() {
                 <TravelPast travels={visibleTravels} handleStateFilter={handleStateFilter}/>
             </Route>
             <Route exact path="/plans">
-                <TravelFuture passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} futurePassActive={futurePassActive} setFuturePassActive={setFuturePassActive} password={password} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
+                <TravelFuture handleCompleteAdd={handleCompleteAdd} setLastTravel={setLastTravel} passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} futurePassActive={futurePassActive} setFuturePassActive={setFuturePassActive} password={password} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
                 <Memories passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} memoryPassActive={memoryPassActive} setMemoryPassActive={setMemoryPassActive} password={password} handleStateFilter={handleStateFilter} memories={visibleMemories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>

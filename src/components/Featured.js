@@ -3,11 +3,7 @@ import './App.css';
 import TravelCard from "./TravelCard";
 
 function Featured({ travels }) {
-  const lastTravelRender = travels.map (travel => {
-    return (
-        <TravelCard travelClass="TravelCard" travel={travel} key={travel.id}/>
-    )
-})
+  const lastTravelRender = <TravelCard travelClass="TravelCard" travel={travels} />
 
     return (
         <div className="Featured">

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function FutureCard({ travels, setTravels, futureEvent, future, setFuture, setCompleteData }) {
+function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, setCompleteData }) {
 
     function deletePlan(deletedPlan) {
         const updatedPlans = future.filter((plan) => plan.id !== deletedPlan.id);
@@ -29,23 +29,6 @@ function FutureCard({ travels, setTravels, futureEvent, future, setFuture, setCo
             photo:futureEvent.photo
         }))
         .then(handleCompleteAdd(futureEvent))
-    }
-
-    function handleCompleteAdd(futureEvent) {
-        fetch("https://travel-station-data.onrender.com/travels", {
-        method: "POST",
-        headers: {
-            "Content-Type" : "application/json"
-        },
-        body: JSON.stringify({
-            city: futureEvent.city,
-            state: futureEvent.state,
-            date: futureEvent.date,
-            photo: futureEvent.photo
-        }),
-        })
-        .then(r => r.json())
-        .then(data => setTravels([...travels, data]))
     }
     
     return (
