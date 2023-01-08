@@ -16,6 +16,8 @@ function MemoryList({ memories, memory, setMemories, passActive }) {
         .then(() => deleteMemory(memory))
     }
     
+    //if password is not correct, then disabled all forms and buttons
+    //if password is correct, enable all forms and buttons
     return (
             <div>
                 <button disabled={!passActive} onClick={handleMemoryDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>

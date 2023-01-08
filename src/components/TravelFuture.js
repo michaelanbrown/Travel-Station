@@ -23,6 +23,8 @@ function TravelFuture({ handleCompleteAdd, setLastTravel, passActive, setPassAct
         )
     })
 
+    //if password is not correct, then disabled all forms and buttons
+    //if password is correct, enable all forms and buttons
     return (
         <div className="Want">
             <Password passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} password={password} />

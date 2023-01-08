@@ -30,6 +30,8 @@ function TravelPlanForm({ future, setFuture, formData, setFormData, want }) {
         }))
     }
 
+    //if password is not correct, then disabled all forms and buttons
+    //if password is correct, enable all forms and buttons
     return (want ? (
         <div className="FutureForm">
             <form onSubmit={handleFutureSubmit}>
@@ -45,7 +47,7 @@ function TravelPlanForm({ future, setFuture, formData, setFormData, want }) {
                 <br></br>
                 <input type="text" id="photo" value={formData.photo} onChange={handleFutureChange} placeholder="Image URL"/>
                 <br></br>
-                <button>Submit</button>
+                <button disabled={!passActive}>Submit</button>
             </form>
         </div>) : null
     )

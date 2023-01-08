@@ -1,8 +1,9 @@
 import React from "react";
 import './App.css';
 
-function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, wantMemory }) {
+function MemoryForm({ passActive, memories, setMemories, formDataMemory, setFormDataMemory, wantMemory }) {
 
+    //set the form inputs as the user types
     function handleMemoryChange(e) {
         setFormDataMemory({
             ...formDataMemory,
@@ -10,6 +11,10 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
         });
     }
 
+    //when new memory is submitted, prevent default
+    //make a POST request to the json
+    //set the new memories array to include the new memory
+    //reset the form data to be blank
     function handleMemorySubmit(e) {
         e.preventDefault();
         fetch("https://travel-station-data.onrender.com/memories", {
@@ -29,6 +34,8 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
         }))
     }
 
+    //if password is not correct, then disabled all forms and buttons
+    //if password is correct, enable all forms and buttons
     return (wantMemory ? (
         <div className="MemoryForm">
             <form onSubmit={handleMemorySubmit}>
@@ -42,7 +49,7 @@ function MemoryForm({ memories, setMemories, formDataMemory, setFormDataMemory, 
                 <br></br>
                 <input type="text" id="memories" value={formDataMemory.memories} onChange={handleMemoryChange} placeholder="Memories"/>
                 <br></br>
-                <button>Submit</button>
+                <button disabled={!passActive}>Submit</button>
             </form>
         </div>) : null
 
