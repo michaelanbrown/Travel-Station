@@ -3,6 +3,9 @@ import './App.css';
 import TravelCard from "./TravelCard";
 
 function Featured({ travels }) {
+
+  //generate a card for the last trip that is in the travels array (the travels prop is passed in
+  //as a single object from the App component)
   const lastTravelRender = <TravelCard travelClass="TravelCard" travel={travels} />
 
     return (

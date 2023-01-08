@@ -100,7 +100,7 @@ function App() {
         })
     },[])
 
-    //password functionality to add/edit memories
+    //password functionality to add/edit memories is set based on the input value
     function handlePasswordChange(e) {
         setPasswordData(e.target.value);
         if(e.target.value !== password) {
@@ -110,6 +110,8 @@ function App() {
         }
     }
 
+    // after marking a plan complete this will add the trip to the past travels array and
+    // change the last travel data
     function handleCompleteAdd(futureEvent) {
         fetch("https://travel-station-data.onrender.com/travels", {
         method: "POST",
@@ -130,7 +132,8 @@ function App() {
         })
     }
 
-
+  //Switch renders a boolean. It's a controlled component  that requires an onValueChange
+  //callback that updates the value prop in order for the component to reflect user actions
   return (
     <div>
         <Header />
