@@ -100,6 +100,7 @@ function App() {
         })
     },[])
 
+    //sets the password inputs as the user types
     //password functionality to add/edit memories is set based on the input value
     function handlePasswordChange(e) {
         setPasswordData(e.target.value);

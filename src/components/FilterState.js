@@ -5,7 +5,7 @@ function FilterState({ handleStateFilter }) {
     //array of states, including DC, that can be filtered by
     const states = ['AL','AK','AZ','AR','CA','CO','CT','DC','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
     
-    //for each option in the states array, create an <option> tag for the filter
+    //for each option in the states array, create an <option> tag for the filter and gives it a key
     const optionList = states.map(state => {
         return (<option value={state} key={state}>{state}</option>)
     })

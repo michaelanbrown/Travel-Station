@@ -10,7 +10,7 @@ function Memories({ passActive, setPassActive, handlePasswordChange, setPassword
     const [wantMemory, setWantMemory] = useState(false)
     //contents of the button
     const [wantMemoryValue, setWantMemoryValue] = useState("Want to submit a new memory?")
-    //for each memory, render a card
+    //for each memory, render a card and gives it a key
     const memoryListRender = memories.map (memory => {
         return (
            <MemoryList passActive={passActive} setMemories={setMemories} memories={memories} memory={memory} key={memory.id} />

@@ -4,6 +4,8 @@ import TravelCard from './TravelCard';
 import FilterState from "./FilterState";
 
 function TravelPast({ travels, handleStateFilter }) {
+
+    //renders a card for each element in the array of past travel plans and gives it a key
     const travelRender = travels.map (travel => {
         return (
             <TravelCard travelClass="TravelCard" travel={travel} key={travel.id}/>
