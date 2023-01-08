@@ -10,7 +10,7 @@ function Memories({ passActive, setPassActive, handlePasswordChange, setPassword
     const [wantMemoryValue, setWantMemoryValue] = useState("Want to submit a new memory?")
     const memoryListRender = memories.map (memory => {
         return (
-           <MemoryList setMemories={setMemories} memories={memories} memory={memory} key={memory.id} />
+           <MemoryList passActive={passActive} setMemories={setMemories} memories={memories} memory={memory} key={memory.id} />
         )
     })
 

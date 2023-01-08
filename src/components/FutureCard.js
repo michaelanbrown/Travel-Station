@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, setCompleteData }) {
+function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, setCompleteData, passActive }) {
 
     function deletePlan(deletedPlan) {
         const updatedPlans = future.filter((plan) => plan.id !== deletedPlan.id);
@@ -34,7 +34,7 @@ function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, setComp
     return (
             <div className="Future">
                 <br></br>
-                <button onClick={handleFutureDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
+                <button disabled={!passActive} onClick={handleFutureDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
                 <img className="FuturePhoto" src={futureEvent.photo} alt={futureEvent.city} width="75%" height="75%" />
                 <p>{futureEvent.city}
                 <br></br>
@@ -44,7 +44,7 @@ function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, setComp
                 <br></br>
                 {futureEvent.reason}
                 </p>
-                <button onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
+                <button disabled={!passActive} onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
                 <br></br>
                 <br></br>
                 <br></br>

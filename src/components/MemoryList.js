@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function MemoryList({ memories, memory, setMemories }) {
+function MemoryList({ memories, memory, setMemories, passActive }) {
 
     function deleteMemory(deletedMemory) {
         const updatedMemory = memories.filter((mem) => mem.id !== deletedMemory.id);
@@ -18,7 +18,7 @@ function MemoryList({ memories, memory, setMemories }) {
     
     return (
             <div>
-                <button onClick={handleMemoryDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
+                <button disabled={!passActive} onClick={handleMemoryDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
                 <br></br>
                 <h1>{memory.city}</h1>
                 <h2>{memory.state}</h2>

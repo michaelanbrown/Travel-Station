@@ -8,15 +8,21 @@ import Memories from "./Memories"
 import Featured from "./Featured"
 
 function App() {
+    //password to edit
     const password = "Phase2ProjectMichaelaTravels"
+    //array of places I have been to (past)
     const [travels, setTravels] = useState([])
+    //last place I went to
     const [lastTravel, setLastTravel] = useState({})
+    //future travel plans
     const [future, setFuture] = useState([])
+    //memories from travels
     const [memories, setMemories] = useState([])
-    const [memoryPassActive, setMemoryPassActive] = useState(false)
-    const [futurePassActive, setFuturePassActive] = useState(false)
+    //password input
     const [passwordData, setPasswordData] = useState("")
+    //is the password correct to be able to edit
     const [passActive, setPassActive] = useState(false)
+    //form data for future travel plans
     const [formData, setFormData] = useState({
         city: "",
         state: "",
@@ -24,35 +30,49 @@ function App() {
         reason: "",
         photo: ""
     });
+    //complete button data in future plans to translate it to travelpast
     const [completeData, setCompleteData] = useState({
         city: "",
         state: "",
         date: "",
         photo: ""
     })
+    //memory form data to input new memories
     const [formDataMemory, setFormDataMemory] = useState({
         city: "",
         state: "",
         date: "",
         memories: ""
     });
-    const [selectedCategory, setSelectedCategory] = useState("");
+    //filter functionality to filter by the selected state category for past travels
+    const [selectedPastCategory, setSelectedPastCategory] = useState("");
 
-    function handleStateFilter(event) {
-        setSelectedCategory(event.target.value);
+    //filter functionality to filter by the selected state category for memories
+    const [selectedMemoryCategory, setselectedMemoryCategory] = useState("");
+
+    //sets the selected category to the input value
+    function handlePastStateFilter(event) {
+        setSelectedPastCategory(event.target.value);
+    }
+    
+    //filters travels by the selected category
+    const visibleTravels = travels.filter((travel) => {
+        if (selectedPastCategory === "") return true;
+        return travel.state === selectedPastCategory
+    })
+
+    //sets the selected category to the input value
+    function handleMemoryStateFilter(event) {
+        setselectedMemoryCategory(event.target.value);
     }
 
-    const visibleTravels = travels.filter((travel) => {
-        if (selectedCategory === "") return true;
-        return travel.state === selectedCategory
-    })
-
+    //filters the memories by the selected category
     const visibleMemories = memories.filter((memory) => {
-        if (selectedCategory === "") return true;
-        return memory.state === selectedCategory
+        if (selectedMemoryCategory === "") return true;
+        return memory.state === selectedMemoryCategory
     })
 
-
+    //generate the travel data and the last travel after rendering the page
     useEffect(() => {
         fetch("https://travel-station-data.onrender.com/travels")
         .then(r => r.json())
@@ -62,6 +82,7 @@ function App() {
         })
     },[])
 
+    //generate the future travel plan data after rendering the page
     useEffect(() => {
         fetch("https://travel-station-data.onrender.com/future")
         .then(r => r.json())
@@ -70,6 +91,7 @@ function App() {
         })
     },[])
 
+    //generate the memory data after rendering the page
     useEffect(() => {
         fetch("https://travel-station-data.onrender.com/memories")
         .then(r => r.json())
@@ -78,6 +100,7 @@ function App() {
         })
     },[])
 
+    //password functionality to add/edit memories
     function handlePasswordChange(e) {
         setPasswordData(e.target.value);
         if(e.target.value !== password) {
@@ -116,13 +139,13 @@ function App() {
                 <Featured travels={lastTravel}/>
             </Route>
             <Route exact path="/past">
-                <TravelPast travels={visibleTravels} handleStateFilter={handleStateFilter}/>
+                <TravelPast travels={visibleTravels} handleStateFilter={handlePastStateFilter}/>
             </Route>
             <Route exact path="/plans">
-                <TravelFuture handleCompleteAdd={handleCompleteAdd} setLastTravel={setLastTravel} passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} futurePassActive={futurePassActive} setFuturePassActive={setFuturePassActive} password={password} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
+                <TravelFuture handleCompleteAdd={handleCompleteAdd} setLastTravel={setLastTravel} passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} password={password} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData}/>
             </Route>
             <Route exact path="/memories">
-                <Memories passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} memoryPassActive={memoryPassActive} setMemoryPassActive={setMemoryPassActive} password={password} handleStateFilter={handleStateFilter} memories={visibleMemories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
+                <Memories passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} password={password} handleStateFilter={handleMemoryStateFilter} memories={visibleMemories} setMemories={setMemories} formDataMemory={formDataMemory} setFormDataMemory={setFormDataMemory}/>
             </Route>
         </Switch>
     </div>

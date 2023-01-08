@@ -19,7 +19,7 @@ function TravelFuture({ handleCompleteAdd, setLastTravel, passActive, setPassAct
 
     const futureRender = future.map(futureEvent => {
         return (
-            <FutureCard handleCompleteAdd={handleCompleteAdd} setLastTravel={setLastTravel} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} futureEvent={futureEvent} future={future} setFuture={setFuture} key={futureEvent.id} />
+            <FutureCard passActive={passActive} handleCompleteAdd={handleCompleteAdd} setLastTravel={setLastTravel} completeData={completeData} setCompleteData={setCompleteData} travels={travels} setTravels={setTravels} futureEvent={futureEvent} future={future} setFuture={setFuture} key={futureEvent.id} />
         )
     })
 
