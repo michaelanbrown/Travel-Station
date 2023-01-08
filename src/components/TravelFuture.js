@@ -36,7 +36,7 @@ function TravelFuture({ handleCompleteAdd, setLastTravel, passActive, setPassAct
         <div className="Want">
             <Password passActive={passActive} setPassActive={setPassActive} handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} password={password} />
             <button disabled={!passActive} onClick={handleWantClick}>{wantValue}</button>
-            <TravelPlanForm future={future} setFuture={setFuture} formData={formData} setFormData={setFormData} want={want}/>
+            <TravelPlanForm passActive={passActive} future={future} setFuture={setFuture} formData={formData} setFormData={setFormData} want={want}/>
             {futureRender}
         </div>
     )

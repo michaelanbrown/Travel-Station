@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 
-function TravelPlanForm({ future, setFuture, formData, setFormData, want }) {
+function TravelPlanForm({ passActive, future, setFuture, formData, setFormData, want }) {
 
     //set the form inputs as the user types
     function handleFutureChange(e) {
