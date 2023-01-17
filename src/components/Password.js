@@ -3,7 +3,7 @@ import './App.css';
 
 function Password({ handlePasswordChange, passwordData}) {
 
-    //password functionality to add/edit memories is set based on the input value
+
     return (
         <div className="password">Enter the Password to Edit:
             <br></br>

@@ -4,7 +4,7 @@ import './App.css';
 
 function Header() {
 
-  //render the header and NavBar
+
   return (
     <div className="Header">
       <header>

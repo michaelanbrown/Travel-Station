@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
 
-function TravelPlanForm({ passActive, future, setFuture, formData, setFormData, want }) {
-
-    //set the form inputs as the user types
+function TravelPlanForm({ password, passwordData, passActive, future, setFuture, want }) {
+    const [formData, setFormData] = useState({
+        city: "",
+        state: "",
+        date: "",
+        reason: "",
+        photo: ""
+    });
+  
     function handleFutureChange(e) {
         setFormData({
             ...formData,
@@ -11,10 +17,7 @@ function TravelPlanForm({ passActive, future, setFuture, formData, setFormData, 
         });
     }
 
-    //when new travel plan is submitted, prevent default
-    //make a POST request to the json
-    //set the new future travel plans array to include the new plan
-    //reset the form data to be blank
+ 
     function handleFutureSubmit(e) {
         e.preventDefault();
         fetch("https://travel-station-data.onrender.com/future", {
@@ -35,8 +38,7 @@ function TravelPlanForm({ passActive, future, setFuture, formData, setFormData, 
         }))
     }
 
-    //if password is not correct, then disabled all forms and buttons
-    //if password is correct, enable all forms and buttons
+
     return (want ? (
         <div className="FutureForm">
             <form onSubmit={handleFutureSubmit}>
@@ -52,7 +54,7 @@ function TravelPlanForm({ passActive, future, setFuture, formData, setFormData, 
                 <br></br>
                 <input type="text" id="photo" value={formData.photo} onChange={handleFutureChange} placeholder="Image URL"/>
                 <br></br>
-                <button disabled={!passActive}>Submit</button>
+                <button disabled={!(password === passwordData)}>Submit</button>
             </form>
         </div>) : null
     )

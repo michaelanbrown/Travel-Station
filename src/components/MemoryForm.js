@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
 
-function MemoryForm({ passActive, memories, setMemories, formDataMemory, setFormDataMemory, wantMemory }) {
+function MemoryForm({ password, passwordData, memories, setMemories, wantMemory }) {
+    const [formDataMemory, setFormDataMemory] = useState({
+        city: "",
+        state: "",
+        date: "",
+        memories: ""
+    });
 
-    //set the form inputs as the user types
     function handleMemoryChange(e) {
         setFormDataMemory({
             ...formDataMemory,
@@ -11,10 +16,7 @@ function MemoryForm({ passActive, memories, setMemories, formDataMemory, setForm
         });
     }
 
-    //when new memory is submitted, prevent default
-    //make a POST request to the json
-    //set the new memories array to include the new memory
-    //reset the form data to be blank
+  
     function handleMemorySubmit(e) {
         e.preventDefault();
         fetch("https://travel-station-data.onrender.com/memories", {
@@ -34,8 +36,7 @@ function MemoryForm({ passActive, memories, setMemories, formDataMemory, setForm
         }))
     }
 
-    //if password is not correct, then disabled all forms and buttons
-    //if password is correct, enable all forms and buttons
+
     return (wantMemory ? (
         <div className="MemoryForm">
             <form onSubmit={handleMemorySubmit}>
@@ -49,7 +50,7 @@ function MemoryForm({ passActive, memories, setMemories, formDataMemory, setForm
                 <br></br>
                 <input type="text" id="memories" value={formDataMemory.memories} onChange={handleMemoryChange} placeholder="Memories"/>
                 <br></br>
-                <button disabled={!passActive}>Submit</button>
+                <button disabled={!(password === passwordData)}>Submit</button>
             </form>
         </div>) : null
 

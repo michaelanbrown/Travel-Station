@@ -1,12 +1,20 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import TravelCard from './TravelCard';
 import FilterState from "./FilterState";
 
-function TravelPast({ travels, handleStateFilter }) {
+function TravelPast({ travels }) {
+    const [selectedPastCategory, setSelectedPastCategory] = useState("");
+    const visibleTravels = travels.filter((travel) => {
+        if (selectedPastCategory === "") return true;
+        return travel.state === selectedPastCategory
+    })
 
-    //renders a card for each element in the array of past travel plans and gives it a key
-    const travelRender = travels.map (travel => {
+    function handlePastStateFilter(event) {
+        setSelectedPastCategory(event.target.value);
+    }
+
+    const travelRender = visibleTravels.map (travel => {
         return (
             <TravelCard travelClass="TravelCard" travel={travel} key={travel.id}/>
         )
@@ -14,7 +22,7 @@ function TravelPast({ travels, handleStateFilter }) {
 
     return (
         <div>
-            <FilterState handleStateFilter={handleStateFilter}/>
+            <FilterState handleStateFilter={handlePastStateFilter}/>
             <br></br>
             {travelRender}
         </div>

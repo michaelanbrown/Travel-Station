@@ -4,7 +4,7 @@ import './App.css';
 
 export default function NavBar ()  {
 
-    //nav link to each page
+
     return (
         <nav className="NavBar">
             <NavLink exact to="/" activeStyle={{color: 'blue'}} style={{color: 'black'}}>Featured Travels</NavLink>
