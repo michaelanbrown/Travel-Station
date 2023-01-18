@@ -9,7 +9,7 @@ import Featured from "./Featured"
 
 function App() {
     
-    const password = "Phase2ProjectMichaelaTravels"
+    const password = "MichaelasTravels126"
     const [travels, setTravels] = useState([])
     const [future, setFuture] = useState([])
     const [memories, setMemories] = useState([])
