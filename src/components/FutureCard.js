@@ -1,13 +1,6 @@
-import React, { useState } from 'react';
 import './App.css';
 
 function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, password, passwordData }) {
-    const [completeData, setCompleteData] = useState({
-        city: "",
-        state: "",
-        date: "",
-        photo: ""
-    })
 
     function deletePlan(deletedPlan) {
         const updatedPlans = future.filter((plan) => plan.id !== deletedPlan.id);
@@ -30,12 +23,6 @@ function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, passwor
         })
         .then(r => r.json())
         .then(() => deletePlan(futureEvent))
-        .then(setCompleteData({
-            city:futureEvent.city,
-            state:futureEvent.state,
-            date:futureEvent.date,
-            photo:futureEvent.photo
-        }))
         .then(handleCompleteAdd(futureEvent))
     }
     
