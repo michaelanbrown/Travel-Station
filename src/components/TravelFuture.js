@@ -29,7 +29,7 @@ function TravelFuture({ handleCompleteAdd, handlePasswordChange, setPasswordData
   
     return (
         <div className="Want">
-            <button disabled={!(password === passwordData)} onClick={handleWantClick}>{wantValue}</button>
+            {password === passwordData ? <button onClick={handleWantClick}>{wantValue}</button> : null}
             <TravelPlanForm password={password} passwordData={passwordData} future={future} setFuture={setFuture} want={want}/>
             {futureRender}
             <Password passClass="password" handlePasswordChange={handlePasswordChange} setPasswordData={setPasswordData} passwordData={passwordData} password={password} />
