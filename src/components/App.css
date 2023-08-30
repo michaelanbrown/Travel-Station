@@ -97,6 +97,7 @@ body {
 .delete {
   cursor: pointer;
   background-color: rgba(118, 154, 154, 0.271);
+  text-align: center;
   float: right
 }
 
@@ -109,8 +110,6 @@ body {
   text-align: center;
 }
 
-.Password {
-  margin-left: 0%;
-  margin-right: 100%;
-  text-align: center;
+.password {
+  float: right
 }
