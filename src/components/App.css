@@ -111,5 +111,6 @@ body {
 }
 
 .password {
+  margin-right: -30%;
   float: right
 }
