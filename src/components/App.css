@@ -116,5 +116,6 @@ body {
 }
 
 .memoryPass {
-  
+  margin-right: -30%;
+  float: right
 }

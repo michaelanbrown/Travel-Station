@@ -43,7 +43,7 @@ function Memories({ handlePasswordChange, setPasswordData, passwordData, passwor
             <br></br>
             <FilterState handleStateFilter={handleMemoryStateFilter}/>
             {memoryListRender}
-            <Password passClasss={"memoryPass"} setPasswordData={setPasswordData} passwordData={passwordData} password={password} handlePasswordChange={handlePasswordChange} />
+            <Password passClass={"memoryPass"} setPasswordData={setPasswordData} passwordData={passwordData} password={password} handlePasswordChange={handlePasswordChange} />
         </div>
     )
 }

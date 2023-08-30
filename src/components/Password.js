@@ -3,7 +3,6 @@ import './App.css';
 
 function Password({ passClass, handlePasswordChange, passwordData}) {
 
-
     return (
         <div className={passClass}>Enter the Password to Edit:
             <br></br>
