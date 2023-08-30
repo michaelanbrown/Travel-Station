@@ -30,7 +30,7 @@ function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, passwor
     return (
             <div className="Future">
                 <br></br>
-                <button disabled={!(password === passwordData)} onClick={handleFutureDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
+                { password === passwordData ? <button onClick={handleFutureDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button> : null }
                 <img className="FuturePhoto" src={futureEvent.photo} alt={futureEvent.city} width="75%" height="75%" />
                 <p>{futureEvent.city}
                 <br></br>
@@ -40,7 +40,7 @@ function FutureCard({ handleCompleteAdd, futureEvent, future, setFuture, passwor
                 <br></br>
                 {futureEvent.reason}
                 </p>
-                <button disabled={!(password === passwordData)} onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
+                { password === passwordData ? <button onClick={handleCompleteDelete} className="complete">Complete 🗸</button> : null }
                 <br></br>
                 <br></br>
                 <br></br>
