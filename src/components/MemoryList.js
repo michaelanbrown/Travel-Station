@@ -20,7 +20,7 @@ function MemoryList({ memories, memory, setMemories, password, passwordData }) {
    
     return (
             <div>
-                <button disabled={!(password === passwordData)} onClick={handleMemoryDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button>
+                { password === passwordData ? <button onClick={handleMemoryDelete} className="delete"><span role="img" aria-label="delete">🗑️</span></button> : null }
                 <br></br>
                 <h1>{memory.city}</h1>
                 <h2>{memory.state}</h2>
