@@ -37,7 +37,7 @@ function Memories({ handlePasswordChange, setPasswordData, passwordData, passwor
    
     return (
         <div className="Want">
-            <button disabled={!(password === passwordData)} onClick={handleWantMemoryClick}>{wantMemoryValue}</button>
+            { password === passwordData ? <button onClick={handleWantMemoryClick}>{wantMemoryValue}</button> : null }
             <MemoryForm password={password} passwordData={passwordData} memories={memories} setMemories={setMemories} wantMemory={wantMemory}/>
             <br></br>
             <br></br>
