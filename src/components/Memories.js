@@ -37,13 +37,13 @@ function Memories({ handlePasswordChange, setPasswordData, passwordData, passwor
    
     return (
         <div className="Want">
-            <Password setPasswordData={setPasswordData} passwordData={passwordData} password={password} handlePasswordChange={handlePasswordChange} />
             <button disabled={!(password === passwordData)} onClick={handleWantMemoryClick}>{wantMemoryValue}</button>
             <MemoryForm password={password} passwordData={passwordData} memories={memories} setMemories={setMemories} wantMemory={wantMemory}/>
             <br></br>
             <br></br>
             <FilterState handleStateFilter={handleMemoryStateFilter}/>
             {memoryListRender}
+            <Password setPasswordData={setPasswordData} passwordData={passwordData} password={password} handlePasswordChange={handlePasswordChange} />
         </div>
     )
 }
